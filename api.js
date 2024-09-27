@@ -7,6 +7,7 @@
 // quando acessar a url / vai ter a resposta Hello 
 // adicionar isso ,"dev": "node api.js" depois de test
 // rodar no terminar com npm run dev
+// https protocolos: post, put, get e delete
 
 const express = require('express')
 const app = express();
