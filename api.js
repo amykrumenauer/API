@@ -1,16 +1,3 @@
-// node.js instalar
-// vite framework
-// npm i express -- Para instalar o express, que é o api
-// npm init -y -- para fazer o package.json
-// incluir isso no package.json depois de license "dependencies": { "express": "^4.21.0"} e depois executá-lo para assim criar o package-lock.json
-// req = requisitar e res = resposta
-// quando acessar a url / vai ter a resposta Hello 
-// adicionar isso ,"dev": "node api.js" depois de test
-// rodar no terminar com npm run dev
-// https protocolos: post, put, get e delete
-// API significa Application Programming Interface (Interface de Programação de Aplicação).
-// APIs são mecanismos que permitem que dois componentes de software se comuniquem usando um conjunto de definições e protocolos.
-
 const express = require('express')
 const app = express();
 
