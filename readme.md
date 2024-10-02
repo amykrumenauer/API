@@ -4,7 +4,7 @@
 GIT:
 Para puxar o código do git para o vs code:
 cd dow + tab
-git commit + link do git 
+git clone + link do git 
 acessar o dow e pegar a pasta
 
 Para atualizar o código do git:
