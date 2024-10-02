@@ -5,20 +5,8 @@ const port = 3000;
 
 let personList = [];
 
-// Mostra todos
-app.get('/visualizar', (req, res) => {
+app.get('/', (req, res) => {
     res.send(personList);
-});
-
-// Mostra por ID
-app.get('/visualizar/:id', (req, res) => {
-    const { id } = req.params;
-    const person = personList[id];
-    if (person) {
-        res.send(person);
-    } else {
-        res.status(404).send('Usuário não encontrado');
-    }
 });
 
 // Novo usuário
@@ -28,14 +16,19 @@ app.post('/cadastrar', (req, res) => {
     res.send(`Usuário recebido!\n\nID: ${id} \nNome do usuário: ${name}, \nAge: ${age}`);
 });
 
+// Mostra todos
+app.get('/visualizar', (req, res) => {
+    res.send(personList);
+});
+
 // Atualizar por id
 app.put('/atualizar/:id', (req, res) => {
     const { id } = req.params;
     const { name, age } = req.body;
     const person = personList[id];
     if (person) {
-        personList[id] = { name, age };
-        res.send(`Usuário atualizado!\nNovo nome: ${name} \nNova idade: ${age}`);
+        personList[id] = { id, name, age };
+        res.send(`Usuário atualizado!\nNovo ID: ${id}\nNovo nome: ${name} \nNova idade: ${age}`);
     } else {
         res.status(404).send('Usuário não encontrado');
     }
