@@ -32,7 +32,7 @@ app.delete('/deletar/id/:id', (req, res) => {
     const veiculoIndex = veiculos.findIndex(v => v.id == id);
 
     if (veiculoIndex !== -1) {
-        veiculos.splice(veiculoIndex, 1);
+        veiculos.splice(veiculoIndex, 1); // para remover o splice e 1 só
         res.send('Veículo deletado com sucesso');
     } else {
         res.status(404).send('Veículo não encontrado');
@@ -42,7 +42,7 @@ app.delete('/deletar/id/:id', (req, res) => {
 // deletar por modelo
 app.delete('/deletar/modelo/:modelo', (req, res) => {
     const { modelo } = req.params;
-    const veiculosAntes = veiculos.length;
+    const veiculosAntes = veiculos.length; // lenght ver o tamnaho da array
 
     veiculos = veiculos.filter(v => v.modelo !== modelo);
     const veiculosDeletados = veiculosAntes - veiculos.length;
@@ -62,7 +62,7 @@ app.get('/veiculos', (req, res) => {
 // selecionar por ID
 app.get('/veiculos/:id', (req, res) => {
     const { id } = req.params;
-    const veiculo = veiculos.find(v => v.id == id);
+    const veiculo = veiculos.find(v => v.id == id); // v recebe v.id igual ao id
 
     if (veiculo) {
         res.json(veiculo);
@@ -70,8 +70,8 @@ app.get('/veiculos/:id', (req, res) => {
         res.status(404).send('Veículo não encontrado');
     }
 });
-
-// selecionar por Ano
+ 
+// selecionar por ano
 app.get('/veiculos/ano/:ano', (req, res) => {
     const { ano } = req.params;
     const veiculosAno = veiculos.filter(v => v.ano == ano);
@@ -85,7 +85,7 @@ app.get('/veiculos/ano/:ano', (req, res) => {
 
 // selecionar todos os veículos da cor AZUL
 app.get('/veiculos/cor/azul', (req, res) => {
-    const veiculosAzuis = veiculos.filter(v => v.cor.toLowerCase() === 'azul');
+    const veiculosAzuis = veiculos.filter(v => v.cor.toLowerCase() === 'azul'); // toLowerCase converte p letra minuscula
 
     if (veiculosAzuis.length > 0) {
         res.json(veiculosAzuis);
