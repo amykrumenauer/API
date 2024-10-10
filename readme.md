@@ -57,3 +57,6 @@ Função anônima ou arrow:
 Método da pilha
 push - coloca na lista
 pop - tira o último da lista
+
+Banco de dados
+npm i mysql2 - instala o protocolo 
