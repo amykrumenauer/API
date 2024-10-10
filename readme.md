@@ -60,3 +60,17 @@ pop - tira o último da lista
 
 Banco de dados
 npm i mysql2 - instala o protocolo 
+
+CREATE DATABASE Veiculos
+USE Veiculos 
+
+CREATE TABLE veiculos (
+ id INT PRIMARY KEY NOT NULL,
+ marca VARCHAR (60) NOT NULL,
+ modelo VARCHAR (60) NOT NULL,
+ ano INT NOT NULL,
+ cor VARCHAR (20) NOT NULL, 
+ proprietario VARCHAR (60) NOT NULL
+)
+
+SELECT * FROM veiculos 
