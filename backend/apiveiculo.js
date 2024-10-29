@@ -1,12 +1,19 @@
 const express = require('express');
+const cors = require('cors');
 const banco = require('./banco');
 const app = express();
 app.use(express.json());
 const port = 3000;
 
+// npm i cors
+app.use(cors({
+    origin:'*'
+}));
+
 // novo veículo
 app.post('/inserir', (req, res) => {
     const { id, marca, modelo, ano, cor, proprietario } = req.body;
+    console.log("O frontend requisitou uma rota de api")
     banco.query(
         `INSERT INTO Veiculos (id, marca, modelo, ano, cor, proprietario) VALUES (?, ?, ?, ?, ?, ?)`,
         [Number(id), marca, modelo, Number(ano), cor, proprietario],
@@ -94,8 +101,11 @@ app.get('/veiculos/:id', (req, res) => {
                 console.error('Erro na consulta por id:', err);
                 return res.status(500).json({ error: 'Erro ao consultar veículo por id' });
             }
-            return res.json(results);
-        }
+            if (results.length === 0) {
+                return res.status(404).send('Veículo não encontrado.');
+              }
+              return res.json(results[0]); // Retorna o primeiro veículo encontrado
+            }
     );
 });
 

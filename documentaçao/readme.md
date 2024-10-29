@@ -1,3 +1,5 @@
+Este aplicativo React é um sistema simples para gerenciar veículos, permitindo a inserção, atualização, remoção e consulta de dados.
+
 // node.js instalar
 // vite framework de frontend 
 id do localhost 127.0.0.1
@@ -20,6 +22,8 @@ Comandos básicos:
 // incluir isso no package.json depois de license "dependencies": { "express": "^4.21.0"} e depois executá-lo para assim criar o package-lock.json
 // adicionar isso ,"dev": "node api.js" depois de test
 // ctrl + j abre o terminal
+npm i axios 
+npm i cors
 
 Explicações do código:
 // req = requisitar = body ou params
@@ -100,3 +104,18 @@ Não relacional
 Dois tipos de memória
 Volátil: que se perde, ex: memória ram
 Não volátil: não se perde, ex: pen drive. hd. banco de dados
+
+// Meu banco de dados Veiculos
+
+CREATE DATABASE Veiculos;
+
+USE Veiculos;
+
+CREATE TABLE Veiculos (
+	id INT NOT NULL, 
+    marca VARCHAR(50),
+    modelo VARCHAR(50),
+    ano INT,
+	cor VARCHAR(15),
+    proprietario VARCHAR(50)
+)
