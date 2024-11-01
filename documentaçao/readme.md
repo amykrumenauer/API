@@ -4,26 +4,11 @@ Este aplicativo React é um sistema simples para gerenciar veículos, permitindo
 // vite framework de frontend 
 id do localhost 127.0.0.1
 
-GIT:
-Para puxar o código do git para o vs code:
-cd dow + tab
-git clone + link do git 
-acessar o dow e pegar a pasta
-
-Para atualizar o código do git:
-certifique-se estar na pasta: git status
-para selecionar tudo o que está no vs code: git add .
-para modificar e adicionar no repositório: git commit -m "algo que quiser escrever"
-git push
-
 Comandos básicos:
 // npm i express -- Para instalar o express, framework de gerenciamento das rotas
 // npm init -y -- para fazer o package.json
-// incluir isso no package.json depois de license "dependencies": { "express": "^4.21.0"} e depois executá-lo para assim criar o package-lock.json
 // adicionar isso ,"dev": "node api.js" depois de test
 // ctrl + j abre o terminal
-npm i axios 
-npm i cors
 
 Explicações do código:
 // req = requisitar = body ou params
@@ -104,6 +89,18 @@ Não relacional
 Dois tipos de memória
 Volátil: que se perde, ex: memória ram
 Não volátil: não se perde, ex: pen drive. hd. banco de dados
+
+no backend:
+cd .\backend\
+npm install 
+npm i cors
+npm run dev
+
+no frontend: 
+cd .\frontend\
+cd .\front\
+npm install
+npm i axios
 
 // Meu banco de dados Veiculos
 

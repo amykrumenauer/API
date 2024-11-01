@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   const [id, setId] = useState(0);
@@ -74,6 +74,7 @@ useEffect(() => {
 
   return (
     <>
+      <Navbar/>
       <div className='card'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="id">ID:</label>
